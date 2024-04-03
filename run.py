@@ -42,3 +42,17 @@ for epoch in range(1000):
 with torch.no_grad():
     predition = model(torch.tensor([[10.0]], dtype=torch.float32))
     print(f'Previsão de tempo de conclusão: {predition.item()} minutos')
+
+# Save the model
+torch.save(model, 'model.pth')
+
+# Save the model's state dictionary
+torch.save(model.state_dict(), 'model_state_dict.pth')
+
+# # Load the model
+# model = torch.load('model.pth')
+
+# # Load the model's state dictionary
+# model = Net()
+# model.load_state_dict(torch.load('model_state_dict.pth'))
+# model.eval()
